@@ -1,7 +1,30 @@
-// Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
+use reqwest::blocking::Client;
+use scraper::{Html, Selector};
+
+fn get_html(url: &str) -> Result<String, reqwest::Error> {
+
+    let client = Client::new();
+    let response = client.get(url).send()?;
+    let html_content = response.text()?;
+
+    Ok(html_content)
+}
+
 #[tauri::command]
 fn scrape(url: &str) -> String {
-    format!("Analyzing {}.", url)
+
+    let html_content = get_html(url).expect("Failed to get HTML.");
+
+    let document = Html::parse_document(&html_content);
+    let selector = Selector::parse("a").unwrap();
+
+    let mut res = "".to_string();
+
+    for element in document.select(&selector) {
+        res += &(element.value().attr("href").unwrap().to_string() + "\n");
+    }
+
+    res.to_string()
 }
 
 #[tauri::command]

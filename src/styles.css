@@ -96,3 +96,9 @@ button:active {
   background-color: white;
   color: #535bf2;
 }
+
+#graph {
+  height: 100vh;
+  width: 100vw;
+  display: none;
+}
