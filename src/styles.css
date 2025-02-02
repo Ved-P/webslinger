@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: white;
+  color: #0f0f0f;
+}
+
+.inverted-color-scheme {
+  background-color: #535bf2;
+  color: white;
+}
+
+.container {
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  height: 30vh;
+
+  text-align: center;
+}
+
+.page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-name, .checkmark, .alert {
+  font-size: 32px;
+  margin: 0;
+}
+
+.checkmark {
+  color: #535bf2;
+}
+
+.alert {
+  color: #f2545c;
+}
+
+.explanation {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+input,
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: #0f0f0f;
+  background-color: #ffffff;
+  transition: border-color 0.25s;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #396cd8;
+}
+button:active {
+  border-color: #396cd8;
+  background-color: #e8e8e8;
+}
+
+input,
+button {
+  outline: none;
+}
+
+hr {
+  border-color: #535bf2;
+  opacity: 0.25;
+}
+
+#url-input {
+  margin-right: 5px;
+}
+
+#back {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  margin: 10px;
+
+  width: 50px;
+  height: 50px;
+
+  text-align: center;
+}
+
+#back span {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  font-size: 50px;
+  line-height: 40px;
+}
+button:active {
+  border-color: #535bf2;
+  background-color: white;
+  color: #535bf2;
+}
+
+#graph {
+  display: none;
+
+  padding: 70px 10px 10px;
+}
+
+.muted {
+  text-align: center;
+  color: #e8e8e8;
+  font-style: italic;
+}
